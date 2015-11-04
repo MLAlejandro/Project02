@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Proyecto 2">
+		<meta name="keywords" content="HTML5, CSS3, JavaScript">
+		<title>Proyecto 2</title>	
+        <link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<?php 
+		$con = mysqli_connect('localhost', 'root', 'DAW22015', 'BD_botiga_animals');
+		$comprovado=0;
+			//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
+			$sql = "SELECT * FROM tbl_user_reserva
+						   INNER JOIN tbl_aula ON tbl_aula.id_aula = tbl_user_reserva.id_aula			   
+						   INNER JOIN tbl_usuaris ON tbl_usuaris.email_usuari = tbl_user_reserva.email_usuari
+							INNER JOIN tbl_recurs ON tbl_user_reserva.id_recurs = tbl_recurs.id_recurs";
+		?>
+		<!-- pagina de loggin -->
+		<div class="wrapper">
+			<div class="container">
+				<h1>Bienvenido</h1>
+		
+				<form class="form">
+					<input class="loggin" type="text" placeholder="Usuario">
+					<input class="loggin" type="password" placeholder="Contraseña">
+					<button type="submit" id="login-button">Identifícate</button><br><br>
+				</form>
+			</div>
+			<ul class="bg-bubbles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+
+		<!-- contenido -->
+	    <script src='js/main.js'></script>
+        <script src="js/index.js"></script>
+        <div class="fondo">
+        	<header>
+        		<h1>TITULO</H1>
+        	</header>
+        	<nav>
+        		<h1>FORMULARIO</h1>
+        	</nav>
+        	<section>
+        		<form class="formulario">
+        			<label for="autor">
+        				Aula:
+        			</label>
+        			<select multiple class="formul" size="10" type="text" name="aula" required="">
+        				<option id="black" selected>Selecciona un aula</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        				<option id="black" value="1">Aula de teoria</option>
+        			</select>
+        			<input class="formul" type="text" name="autor" maxlength="15" required="" placeholder="Aula">
+        		</form>
+        	</section>
+        </div> 
+	</body>
+</html>
