@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <html>
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,7 +12,9 @@
         <body>
                 <div class="fondo">
         	<header>
-        		<p class="username">username</p>
+        		<p class="username"><?php echo $login_session; ?></p>
+                        </br>
+                        <p class="username"><a href="index.php">Cerrar sesión</a></p>
         		<h1>TITULO</H1>
         		
         	</header>
@@ -17,13 +22,13 @@
         		<h1>FORMULARIO</h1>
         	</nav>
         	<section>
-        		<form class="formulario">
+        		<form class="formulario" action="busqueda.php">
         			<label for="autor">
         				Aula:
         			</label>
-        			<select multiple class="formul" size="10" type="text" name="aula">
+        			 <select class="formul"  type="text" name="aula">
                                 <?php
-                                    $con = mysqli_connect('localhost', 'root', 'DAW22015', 'bd_botiga_reserva');   
+                                    $con = mysqli_connect('localhost', 'root', '', 'bd_botiga_reserva');   
                                     $sql = "SELECT tipus_recurs, nom_recurs FROM tbl_recurs where tbl_recurs.tipus_recurs= '1'";
                                     $query = mysqli_query($con,$sql);
                                     if(mysqli_num_rows($query)>0){
@@ -34,33 +39,30 @@
                                     }
                                 ?>   
                     </select>
-        			<br/>
+        			<br>
         				<label for="recursos">
         					Recursos:
         				</label><br>
-					    <input type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex1" for="recurso1">Recurso 1</label>
-					    <input class="check2" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex2" for="recurso1">Recurso 2</label>
-					    <input class="check3" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex3" for="recurso1">Recurso 3</label><br>
-					    <input type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex1" for="recurso1">Recurso 4</label>
-					    <input class="check2" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex2" for="recurso1">Recurso 5</label>
-					    <input class="check3" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex3" for="recurso1">Recurso 6</label><BR>
-					    <input type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex1" for="recurso1">Recurso 7</label>
-					    <input class="check2" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex2" for="recurso1">Recurso 8</label>
-					    <input class="check3" type="checkbox" value="None" id="recurso1" name="Recurso1"/>
-					    <label class="tex3" for="recurso1">Recurso 9</label>
+					     <select class="formul"  type="text" name="recuros">
+                                <?php
+                                    $con2 = mysqli_connect('localhost', 'root', '', 'bd_botiga_reserva');   
+                                    $sql2 = "SELECT tipus_recurs, nom_recurs FROM tbl_recurs where tbl_recurs.tipus_recurs= '0'";
+                                    $query2 = mysqli_query($con2,$sql2);
+                                    if(mysqli_num_rows($query2)>0){
+                                        while($recurs2=mysqli_fetch_array($query2)){
+                                            $valor3 = utf8_encode($recurs2['nom_recurs']);
+                                            echo "<option value='$valor3'>". $valor3 ."</option>";
+                                        }
+                                    }
+                                ?>   
+                    </select>
 					</section>
 					<br>
 					<button class="form2" type="submit" value="ENVIAR"/>ENVIAR</button>
 				</form>
+        		</div>
         	</section>
-       
+        <script src='js/main.js'></script>
+        <script src="js/index.js"></script>
         </body>
 </html>
