@@ -23,7 +23,7 @@ include('login.php');
 				<form class="form" action="" method="POST">
 					<input id="name" name="user" class="loggin" type="text" placeholder="Email">
 					<input id="password" name="pass" class="loggin" type="password" placeholder="Contraseña">
-					<input name="submit" type="submit" id="login-button" value=" Indentificate "></input><br><br>
+					<input class="form2" name="submit" type="submit" id="login-button" value=" Indentificate "></input><br><br>
 					<span><?php echo "</br></br>"; echo "<h2>".$error."</h2>"; ?></span>
 					<script src='js/main.js'></script>
         			<script src="js/index.js"></script>

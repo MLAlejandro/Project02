@@ -48,11 +48,12 @@ body :-ms-input-placeholder {
   overflow: hidden;
 }
 .fondo {
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50A3f2 0%, #50A3f2 100%);
+  
+  
   background: linear-gradient(to bottom right, #50A3f2 0%, #50A3f2 100%);
-  opacity: 0.7;
-  height: 100%;
+  
+  height: auto;
+  min-height: 100%;
   width: 100%;
 }
 .wrapper.form-success .container h1 {
@@ -66,7 +67,7 @@ body :-ms-input-placeholder {
   padding: 80px 0;
   height: 400px;
   text-align: center;
-  margin-top: 250px;
+  margin-top: 200px;
 }
 .container h1 {
   font-size: 40px;
@@ -329,7 +330,7 @@ nav h1{
 }
 .username{
   text-align: right;
-  color: red;
+  color: white;
   font-size: 20px;
   margin-right: 10px;
 }
@@ -352,4 +353,45 @@ nav h1{
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;
+}
+.fondo2 {
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50A3f2 0%, #50A3f2 100%);
+  background: linear-gradient(to bottom right, #50A3f2 0%, #50A3f2 100%);
+  background-color: rgba(255, 254, 254, 0.32);
+  
+}
+#botonform{
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+.imag{
+  border-radius: 3px;
+  
+}
+#botons{
+  margin-top: 10px;
+}
+.pad{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.centrado{
+    color: black;
+    border-radius: 3px;
+    background-color: rgba(255, 254, 254, 0.32);
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding: 10px;
+    display: table;
+    margin-top: 20%;
+    text-align: center;
+}
+#todo{
+  height: 100%
+}
+.negrita{
+	font-weight: bold;
 }
